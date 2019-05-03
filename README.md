@@ -1,4 +1,14 @@
-# AngularFirst
+## Project Information
+-- It consist of one form which basically consist of selectable combobox with other fields
+-- Combobox has been made in different module so that it can be reused provided list of dropdown, placeholder and title will be given from parent
+-- The form has validation on email and the form is made with the help of template driven form
+-- On valid email if someone click on submit button, it redirect user to success page
+-- Success page consist of link clicking on which redirects the user to registration page back.
+
+## Dependencies
+This project has dependency on NgPrime for combo box
+
+# Selectable Combobox
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
@@ -25,3 +35,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+

@@ -12,6 +12,10 @@ export class ComboboxComponent {
     @Output() readonly fieldSelection = new EventEmitter();
     selectedFields;
 
+    /**
+     * function to emit the games to parent registration component
+     * @param games 
+     */
     onGameSelection(games) {
         this.selectedFields = games;
         this.fieldSelection.emit(games);

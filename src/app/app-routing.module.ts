@@ -3,6 +3,7 @@ import { APP_ROUTES } from './config/route.config';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationSuccessComponent } from './registration/success/success.component';
+import { AuthGuard } from './common/guard/auth.guard';
 
 export const routes: Routes = [
     {
@@ -16,7 +17,12 @@ export const routes: Routes = [
     },
     {
         path: APP_ROUTES.SUCCESS,
-        component: RegistrationSuccessComponent
+        component: RegistrationSuccessComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: '**',
+        redirectTo: APP_ROUTES.HOME
     }
 ]
 

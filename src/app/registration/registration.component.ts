@@ -21,21 +21,31 @@ export class RegistrationComponent {
         private router: Router
     ) {  }
   
+    /**
+     * calling api to get list of games for drop down and clear local storage
+     */
     ngOnInit() {
+      localStorage.clear();
       this.registrationService.getSelectableFields().subscribe(res => {
         this.selectableFields = res['games'];
       });
     }
   
+    /**
+     * output function for child combobox to set games in class variable
+     * @param games comma seperated string consisting of games
+     */
     fieldSelection(games) {
       this.selectedGames = games;
     }
   
+    /**
+     * if valid email is entered navigate to success page
+     */
     register() {
         if(this.registrationForm.valid) {
             this.router.navigate(['/success']);
             localStorage.setItem("email", this.registerModel.email);
         }
-      console.log(this.registrationForm.value);
     }
 }
