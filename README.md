@@ -4,6 +4,7 @@
 -- The form has validation on email and the form is made with the help of template driven form
 -- On valid email if someone click on submit button, it redirect user to success page
 -- Success page consist of link clicking on which redirects the user to registration page back.
+-- Guard has been used in order to prevent direct access of other path except for home
 
 ## Dependencies
 This project has dependency on NgPrime for combo box
