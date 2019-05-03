@@ -8,6 +8,18 @@
 ## Dependencies
 This project has dependency on NgPrime for combo box
 
+## Testing
+---Browsers
+    . Chrome
+    . IE
+    . Firefox
+
+--- Devices
+    . Iphone X
+    . Mi A2
+    . Samsung A7
+    . Laptops - Lenovo, Dell, Hp
+
 # Selectable Combobox
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
