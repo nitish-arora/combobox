@@ -1,0 +1,30 @@
+<div class="registration-form-container">
+    <div class="form-header">
+        NETENT Registration
+    </div>
+    <div class="registration-form">
+        <form #registrationForm="ngForm" (ngSubmit)="register()">
+        <div class="form-field">
+            <mat-form-field>
+                <input matInput placeholder="Name" [(ngModel)]="registerModel.name" name="name">
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <mat-form-field>
+                <input matInput placeholder="Email" #userEmail="ngModel" [(ngModel)]="registerModel.email" name="email" required>
+                <mat-error *ngIf="userEmail.errors && userEmail.errors.email">Please enter valid email</mat-error>
+                <mat-error *ngIf="userEmail.errors && userEmail.errors.required">Please enter email</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <app-combobox [selectableFields]="selectableFields" [title]="title" [placeholder]="placeholder" (fieldSelection)="fieldSelection($event)"></app-combobox>
+            <div class="selected-fields">
+            The selected games are: {{selectedGames}}
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit" mat-raised-button color="primary" [disabled]="registrationForm.invalid">Submit</button>
+        </div>
+        </form>
+    </div>
+</div>

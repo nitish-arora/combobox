@@ -1,0 +1,16 @@
+.success-container {
+    margin: auto;
+    width: 60%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.success-container div.thanks-quote {
+    text-align: center;
+    margin: 10px;
+}
+
+.success-container .registration-btn {
+    margin: 40px 10px;
+    text-align: center;
+}

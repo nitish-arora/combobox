@@ -1,0 +1,35 @@
+.registration-form-container {
+    width: 100%;
+}
+
+.registration-form-container .form-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: grey;
+    text-align: center;
+}
+
+.registration-form-container .registration-form {
+    width: 60%;
+    margin: auto;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.registration-form .form-field {
+    padding: 3px 15px;
+}
+
+.registration-form .buttons {
+    padding: 15px;
+}
+
+.form-field .selected-fields {
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.form-field .mat-form-field {
+    width: 100%
+}
