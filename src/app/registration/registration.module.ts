@@ -3,7 +3,7 @@ import { RegistrationComponent } from './registration.component';
 import { RegistrationSuccessComponent } from './success/success.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from './../common/shared.module';
+import { SharedModule } from './../shared/shared.module';
 import { RegistrationService } from './registration.service';
 import { APP_ROUTES } from './../config/route.config';
 import { AuthGuard } from './../core/guard/auth.guard';
