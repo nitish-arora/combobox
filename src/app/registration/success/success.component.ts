@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { APP_ROUTES } from './../../config/route.config';
 
 @Component({
     selector: 'app-registration-success',
@@ -21,7 +22,7 @@ export class RegistrationSuccessComponent {
      * navigate to home and clear localstorage on going back to registration
      */
     goToRegistration() {
-        this.router.navigate(['/home']).then(() => {
+        this.router.navigate([`/${APP_ROUTES.HOME}`]).then(() => {
             localStorage.clear();
         })
     }

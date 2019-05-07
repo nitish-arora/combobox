@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { Router } from '@angular/router';
+import { APP_ROUTES } from './../../config/route.config';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -9,8 +10,8 @@ export class AuthGuard implements CanActivate {
     ) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if (route.url[0] && route.url[0].path === 'success' && !localStorage.getItem("email")) {
-            this.router.navigate(['/home']);
+        if (route.url[0] && route.url[0].path === APP_ROUTES.SUCCESS && !localStorage.getItem("email")) {
+            this.router.navigate([`/${APP_ROUTES.HOME}`]);
             return false;
         }
         return true;

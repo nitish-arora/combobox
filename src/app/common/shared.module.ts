@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material';
-import { MatButtonModule } from '@angular/material';
-import { MatFormFieldModule } from '@angular/material';
+import { ComboboxComponent } from './components/combobox/combo-box.component';
+import { ClickElsewhereDirective } from './directives/outside-click.directive';
 
 const exportModules = [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatFormFieldModule
+    ReactiveFormsModule
 ];
 
 @NgModule({
     imports: [...exportModules],
-    exports: [...exportModules]
+    exports: [...exportModules, ComboboxComponent],
+    declarations: [ComboboxComponent, ClickElsewhereDirective]
 })
 export class SharedModule { }

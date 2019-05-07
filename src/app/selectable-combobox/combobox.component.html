@@ -1,8 +1,0 @@
-<div class="title">Pick a {{ title }} below</div>
-<div class="combo-drop-down">
-    <p-multiSelect [options]="selectableFields" [ngModel]="selectedFields" (ngModelChange)="onGameSelection($event)"
-     [scrollHeight]="'120px'" [panelStyle]="{minWidth:'9em'}" maxSelectedLabels="0"
-     selectedItemsLabel="{0} game selected" filterPlaceHolder="Search for a {{placeholder | lowercase}}..."
-     defaultLabel="{{placeholder}}" 
-    ></p-multiSelect>
-</div>

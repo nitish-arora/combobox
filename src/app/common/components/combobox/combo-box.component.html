@@ -1,0 +1,15 @@
+<div class="combo-box-container" (clickElsewhere)="outsideClick()">
+    <div class="input-container">
+        <input type="text" placeholder="{{lengthPlaceholder ? lengthPlaceholder : placeholder}}" (click)="togglePopup()" readonly>            
+    </div>
+    <div class="popup" *ngIf="isOptionsVisible">
+        <div class="search-box-container">
+            <input type="text" placeholder="Search for a {{placeholder | lowercase}}..." (keyup)="searchGame($event.target.value)">
+        </div>
+        <div class="options-container" [style.maxHeight]="scrollHeight">
+            <div class="options" *ngFor="let field of selectableFields">
+                <input type="checkbox" value="{{field.value}}" [checked]="field.checked" (change)="onOptionChange($event)">{{field.label}}
+            </div>
+        </div>
+    </div>
+</div>

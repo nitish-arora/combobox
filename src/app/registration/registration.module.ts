@@ -1,20 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RegistrationComponent } from './registration.component';
 import { RegistrationSuccessComponent } from './success/success.component';
-import { RouterModule } from '@angular/router';
-import { ComboboxModule } from './../selectable-combobox/combobox.module';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './../common/shared.module';
 import { RegistrationService } from './registration.service';
+import { APP_ROUTES } from './../config/route.config';
+import { AuthGuard } from './../core/guard/auth.guard';
+
+const registrationRoutes: Routes = [
+    {
+        path: APP_ROUTES.HOME,
+        component: RegistrationComponent
+    },
+    {
+        path: APP_ROUTES.SUCCESS,
+        component: RegistrationSuccessComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: '**',
+        redirectTo: APP_ROUTES.HOME
+    }
+];
 
 @NgModule({
     imports: [
-        RouterModule,
-        ComboboxModule,
+        RouterModule.forChild(registrationRoutes),
         HttpClientModule,
-        SharedModule,
+        SharedModule
     ],
-    exports: [],
+    exports: [RouterModule],
     declarations: [RegistrationComponent, RegistrationSuccessComponent],
     providers: [RegistrationService]
 })

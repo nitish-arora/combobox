@@ -17,7 +17,14 @@
     margin-top: 15px;
 }
 
-.registration-form .form-field {
+.registration-form .form-text-field {
+    padding: 3px 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.registration-form .form-combo-field {
     padding: 3px 15px;
 }
 
@@ -25,11 +32,29 @@
     padding: 15px;
 }
 
-.form-field .selected-fields {
+.form-combo-field .selected-fields {
     font-size: 12px;
     word-wrap: break-word;
+    padding-top: 5px;
 }
 
-.form-field .mat-form-field {
-    width: 100%
+.form-combo-field .game-label {
+    font-size: 13px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.registration-form input {
+    border: none;    
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.registration-form .form-field-error {
+    font-size: 10px;
+    color: red;
+    padding-left: 15px;
+    height: 15px;
 }

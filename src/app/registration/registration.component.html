@@ -4,22 +4,19 @@
     </div>
     <div class="registration-form">
         <form #registrationForm="ngForm" (ngSubmit)="register()">
-        <div class="form-field">
-            <mat-form-field>
-                <input matInput placeholder="Name" [(ngModel)]="registerModel.name" name="name">
-            </mat-form-field>
+        <div class="form-text-field">
+            <input placeholder="Name" [(ngModel)]="registerModel.name" name="name">
         </div>
-        <div class="form-field">
-            <mat-form-field>
-                <input matInput placeholder="Email" #userEmail="ngModel" [(ngModel)]="registerModel.email" name="email" required>
-                <mat-error *ngIf="userEmail.errors && userEmail.errors.email">Please enter valid email</mat-error>
-                <mat-error *ngIf="userEmail.errors && userEmail.errors.required">Please enter email</mat-error>
-            </mat-form-field>
+        <div class="form-text-field">
+            <input placeholder="Email" #userEmail="ngModel" [(ngModel)]="registerModel.email" name="email" required email>
         </div>
-        <div class="form-field">
-            <app-combobox [selectableFields]="selectableFields" [title]="title" [placeholder]="placeholder" (fieldSelection)="fieldSelection($event)"></app-combobox>
+        <div class="form-field-error" *ngIf="(userEmail.dirty || userEmail.touched) && userEmail.errors?.email">Please enter valid email</div>
+        <div class="form-field-error" *ngIf="(userEmail.dirty || userEmail.touched) && userEmail.errors?.required">Please enter email</div>
+        <div class="form-combo-field">
+            <div class="game-label">Pick a game below</div>
+            <app-combo-box [selectableFields]="selectableFields" [placeholder]="placeholder" (fieldSelection)="onGameSelection($event)" [scrollHeight]="scrollHeight"></app-combo-box>
             <div class="selected-fields">
-            The selected games are: {{selectedGames}}
+                The selected games are: {{selectedGames}}
             </div>
         </div>
         <div class="buttons">
