@@ -11,11 +11,18 @@ export class ComboboxComponent implements OnChanges {
     @Input() scrollHeight;
     @Output() fieldSelection = new EventEmitter();
     isOptionsVisible: boolean = false;
-    tempSelectableFields;
-    gameSelected = [];
-    lengthPlaceholder;
+    tempSelectableFields; // variable for updating with search text
+    gameSelected = []; // array for checked dropdown options
+    lengthPlaceholder; // on checkbox selection change input placeholder for dropdown
 
+    /**
+     * on selectableField change 
+     * put checked property with value false in each element
+     * took temperory variable in order to maintain listing for search text
+     * @param changes 
+     */
     ngOnChanges(changes: SimpleChanges) {
+        
         if(changes['selectableFields'].previousValue !== changes['selectableFields'].currentValue) {
             this.selectableFields.forEach(item => {
                 item['checked'] = false;
@@ -24,10 +31,17 @@ export class ComboboxComponent implements OnChanges {
         }
     }
 
+    /**
+     * toggle popup of dropdwon
+     */
     togglePopup() {
         this.isOptionsVisible = !this.isOptionsVisible;
     }
 
+    /**
+     * function to filter the options of dropdown based on search text
+     * @param searchText text in search box
+     */
     searchGame(searchText) {
         this.selectableFields = this.tempSelectableFields;
         if(searchText) {
@@ -39,6 +53,11 @@ export class ComboboxComponent implements OnChanges {
         }
     }
 
+    /**
+     * on checkbox change
+     * update list of game selected
+     * update placeholder for input text
+     */
     onOptionChange(event) {
         if(event.target.checked) {            
             this.gameSelected.push(event.target.value);
@@ -53,6 +72,9 @@ export class ComboboxComponent implements OnChanges {
         this.fieldSelection.emit(this.gameSelected);
     }
 
+    /**
+     * on outside click of dropdown hide dropdown and reset the dropdown list
+     */
     outsideClick() {
         this.isOptionsVisible = false;
         this.selectableFields = this.tempSelectableFields;

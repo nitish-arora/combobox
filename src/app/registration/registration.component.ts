@@ -42,6 +42,10 @@ export class RegistrationComponent {
         }
     }
 
+    /**
+     * output function emitted for combobox selection
+     * @param games array of selected games
+     */
     onGameSelection(games) {
         this.selectedGames = games.join(',');
     }

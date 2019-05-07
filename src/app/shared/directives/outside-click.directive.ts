@@ -7,6 +7,10 @@ export class ClickElsewhereDirective {
     @Output() clickElsewhere = new EventEmitter<MouseEvent>();
     constructor(private elementRef: ElementRef) {}
 
+    /**
+     * on outside click of referenced element emit event to close dropdown
+     * @param event 
+     */
     @HostListener('document:click',['$event'])
     public onDocumentClick(event: MouseEvent): void {
         const targetElement = event.target as HTMLElement;        
