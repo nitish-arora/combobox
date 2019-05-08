@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RegistrationComponent } from './registration.component';
-import { RegistrationSuccessComponent } from './success/success.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from './../shared/shared.module';
+
+import { APP_ROUTES } from './../shared/route.config';
+import { AuthGuard } from './../core/auth.guard';
+import { RegistrationComponent } from './registration.component';
+import { RegistrationSuccessComponent } from './success/success.component';
 import { RegistrationService } from './registration.service';
-import { APP_ROUTES } from './../shared/config/route.config';
-import { AuthGuard } from './../core/guard/auth.guard';
+import { SharedModule } from './../shared/shared.module';
 
 const registrationRoutes: Routes = [
     {

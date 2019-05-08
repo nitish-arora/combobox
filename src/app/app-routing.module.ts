@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { APP_ROUTES } from './shared/config/route.config';
 import { RouterModule, Routes } from '@angular/router';
+
+import { APP_ROUTES } from './shared/route.config';
 
 export const routes: Routes = [
     {

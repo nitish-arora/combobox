@@ -11,9 +11,9 @@ export class ComboboxComponent implements OnChanges {
     @Input() scrollHeight;
     @Output() fieldSelection = new EventEmitter();
     isOptionsVisible: boolean = false;
-    tempSelectableFields; // variable for updating with search text
-    gameSelected = []; // array for checked dropdown options
-    lengthPlaceholder; // on checkbox selection change input placeholder for dropdown
+    tempSelectableFields;
+    gameSelected = [];
+    lengthPlaceholder;
 
     /**
      * on selectableField change 

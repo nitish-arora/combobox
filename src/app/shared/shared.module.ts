@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ComboboxComponent } from './components/combobox/combo-box.component';
-import { ClickElsewhereDirective } from './directives/outside-click.directive';
+import { ClickElsewhereDirective } from './outside-click.directive';
 
 const exportModules = [
     CommonModule,

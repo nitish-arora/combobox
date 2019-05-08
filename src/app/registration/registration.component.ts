@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { RegisterUser } from './register.class';
-import { RegistrationService } from './registration.service';
 import { Router } from '@angular/router';
-import { APP_ROUTES } from './../shared/config/route.config';
+
+import { RegisterUser } from './register-user.class';
+import { RegistrationService } from './registration.service';
+import { APP_ROUTES } from './../shared/route.config';
 
 @Component({
     selector: 'app-registration',
@@ -46,7 +47,7 @@ export class RegistrationComponent {
      * output function emitted for combobox selection
      * @param games array of selected games
      */
-    onGameSelection(games) {
+    gameSelected(games) {
         this.selectedGames = games.join(',');
     }
 }

@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
-import { AuthGuard } from './guard/auth.guard';
 import { RouterModule, Router } from '@angular/router';
+
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
     imports: [RouterModule],
