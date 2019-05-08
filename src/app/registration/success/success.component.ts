@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { APP_ROUTES } from './../../config/route.config';
+import { APP_ROUTES } from './../../shared/config/route.config';
 
 @Component({
     selector: 'app-registration-success',

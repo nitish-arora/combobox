@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { RegisterUser } from './register.class';
 import { RegistrationService } from './registration.service';
 import { Router } from '@angular/router';
-import { APP_ROUTES } from './../config/route.config';
+import { APP_ROUTES } from './../shared/config/route.config';
 
 @Component({
     selector: 'app-registration',
