@@ -5,8 +5,9 @@
     <div class="registration-form">
         <form #registrationForm="ngForm" (ngSubmit)="register()">
         <div class="form-text-field">
-            <input placeholder="Name" [(ngModel)]="registerModel.name" name="name">
+            <input placeholder="Name*" [(ngModel)]="registerModel.name" #name="ngModel" name="name" required>
         </div>
+        <div class="form-field-error" *ngIf="(name.dirty || name.touched) && name.errors?.required">Please enter name</div>
         <div class="form-text-field">
             <input placeholder="Email*" #userEmail="ngModel" [(ngModel)]="registerModel.email" name="email" required email>
         </div>
@@ -14,13 +15,14 @@
         <div class="form-field-error" *ngIf="(userEmail.dirty || userEmail.touched) && userEmail.errors?.required">Please enter email</div>
         <div class="form-combo-field">
             <div class="game-label">Pick a game below</div>
-            <app-combo-box [selectableFields]="selectableFields" [placeholder]="placeholder" (fieldSelection)="gameSelected($event)" [scrollHeight]="scrollHeight"></app-combo-box>
+            <app-combo-box [selectableFields]="selectableFields" [placeholder]="placeholder" (fieldSelection)="gameSelected($event)" [scrollHeight]="scrollHeight" (dropDownClosed)="dropDownClosed()"></app-combo-box>
             <div class="selected-fields">
                 The selected games are: {{selectedGames}}
             </div>
         </div>
+        <div class="form-field-error" *ngIf="isGameDropDownTouched && (selectedGamesCount === 0)">Please select atleast one game</div>
         <div class="buttons">
-            <button type="submit" mat-raised-button color="primary" [disabled]="registrationForm.invalid">Submit</button>
+            <button type="submit" mat-raised-button color="primary" [disabled]="registrationForm.invalid || (selectedGamesCount === 0)">Submit</button>
         </div>
         </form>
     </div>

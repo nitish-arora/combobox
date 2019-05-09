@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { RegisterUser } from './../shared/models/register-user.class';
@@ -10,13 +10,16 @@ import { REGISTRATION_ROUTES } from './../shared/config/route.config';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class RegistrationHomeComponent {
+export class RegistrationHomeComponent implements OnInit {
     registerModel: RegisterUser = new RegisterUser();
     @ViewChild('registrationForm') registrationForm;
     selectableFields;
     placeholder: string = "Games";
     scrollHeight: string = "160px"
     selectedGames: string;
+    selectedGamesCount: number = 0;
+    isGameDropDownTouched: boolean = false;
+
 
     constructor(
         private registrationService: RegistrationService,
@@ -48,6 +51,8 @@ export class RegistrationHomeComponent {
      * @param games array of selected games
      */
     gameSelected(games) {
+        this.isGameDropDownTouched = true;
+        this.selectedGamesCount = games.length;
         this.selectedGames = games.join(',');
     }
 }

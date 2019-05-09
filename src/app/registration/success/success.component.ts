@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { REGISTRATION_ROUTES } from './../shared/config/route.config';
 
@@ -7,7 +7,7 @@ import { REGISTRATION_ROUTES } from './../shared/config/route.config';
     templateUrl: './success.component.html',
     styleUrls: ['./success.component.css']
 })
-export class RegistrationSuccessComponent {
+export class RegistrationSuccessComponent implements OnInit{
     email: string;
     constructor(private router: Router) {}
 
