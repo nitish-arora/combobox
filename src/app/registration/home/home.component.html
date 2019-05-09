@@ -15,7 +15,7 @@
         <div class="form-field-error" *ngIf="(userEmail.dirty || userEmail.touched) && userEmail.errors?.required">Please enter email</div>
         <div class="form-combo-field">
             <div class="game-label">Pick a game below</div>
-            <app-combo-box [selectableFields]="selectableFields" [placeholder]="placeholder" (fieldSelection)="gameSelected($event)" [scrollHeight]="scrollHeight" (dropDownClosed)="dropDownClosed()"></app-combo-box>
+            <app-combo-box [selectableFields]="selectableFields" [placeholder]="placeholder" (fieldSelection)="gameSelected($event)" [scrollHeight]="scrollHeight"></app-combo-box>
             <div class="selected-fields">
                 The selected games are: {{selectedGames}}
             </div>
