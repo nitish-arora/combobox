@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ComboboxComponent } from './components/combobox/combo-box.component';
-import { ClickElsewhereDirective } from './outside-click.directive';
+import { OutsideClickDirective } from './directives/outside-click.directive';
 
 const exportModules = [
     CommonModule,
@@ -14,6 +14,6 @@ const exportModules = [
 @NgModule({
     imports: [...exportModules],
     exports: [...exportModules, ComboboxComponent],
-    declarations: [ComboboxComponent, ClickElsewhereDirective]
+    declarations: [ComboboxComponent, OutsideClickDirective]
 })
 export class SharedModule { }

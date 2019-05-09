@@ -6,9 +6,13 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from
     styleUrls: ['./combo-box.component.css']
 })
 export class ComboboxComponent implements OnChanges {
+    //array of data in the form {label: "label", value: "value"}
     @Input() selectableFields;
+    //value to be replaced in placeholder of input field
     @Input() placeholder;
+    //max height of dropdown
     @Input() scrollHeight;
+    //values in array of selected checked boxes
     @Output() fieldSelection = new EventEmitter();
     isOptionsVisible: boolean = false;
     tempSelectableFields;
