@@ -17,7 +17,7 @@
             <div class="game-label">Pick a game below</div>
             <app-combo-box [selectableFields]="selectableFields" [placeholder]="placeholder" (fieldSelection)="gameSelected($event)" [scrollHeight]="scrollHeight"></app-combo-box>
             <div class="selected-fields">
-                The selected games are: {{selectedGames}}
+                The selected games are: {{registerModel.selectedGames}}
             </div>
         </div>
         <div class="form-field-error" *ngIf="isGameDropDownTouched && (selectedGamesCount === 0)">Please select atleast one game</div>

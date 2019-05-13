@@ -16,7 +16,6 @@ export class RegistrationHomeComponent implements OnInit {
     selectableFields;
     placeholder: string = "Games";
     scrollHeight: string = "160px"
-    selectedGames: string;
     selectedGamesCount: number = 0;
     isGameDropDownTouched: boolean = false;
 
@@ -53,6 +52,6 @@ export class RegistrationHomeComponent implements OnInit {
     gameSelected(games) {
         this.isGameDropDownTouched = true;
         this.selectedGamesCount = games.length;
-        this.selectedGames = games.join(',');
+        this.registerModel.selectedGames = games.join(',');
     }
 }
