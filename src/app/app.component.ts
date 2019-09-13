@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   ngOninit() {
     debugger;
+    console.log(localStorage.getItem("abc"));
+    alert(localStorage.getItem("abc"));
     window.addEventListener("message", this.messageHandler, false);
     window.postMessage("message","*");
   }
