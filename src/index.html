@@ -11,7 +11,6 @@
   <script>
     const domains = ["http://localhost:3000"];
     window.addEventListener("message", function (event) {
-      debugger;
       if(!domains.includes(event.origin)) return;
       const { action, key, value } = event.data;
       if (action == "save") {
