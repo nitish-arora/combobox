@@ -131,6 +131,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.ngOninit = function () {
         debugger;
         window.addEventListener("message", this.messageHandler, false);
+        window.postMessage("message", "*");
     };
     AppComponent.prototype.messageHandler = function (event) {
         debugger;
