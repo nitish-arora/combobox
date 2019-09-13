@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   ngOninit() {
+    debugger;
     window.addEventListener("message", this.messageHandler, false);
   }
 
