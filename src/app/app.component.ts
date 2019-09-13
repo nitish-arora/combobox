@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  ngOninit() {
+    window.addEventListener("message", this.messageHandler, false);
+  }
+
+  messageHandler(event) {
+    debugger;
+  }
 }
