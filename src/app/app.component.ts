@@ -9,6 +9,7 @@ export class AppComponent {
   ngOninit() {
     debugger;
     window.addEventListener("message", this.messageHandler, false);
+    window.postMessage("message","*");
   }
 
   messageHandler(event) {
