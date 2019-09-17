@@ -9,16 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script>
-    window.parent.postMessage({"isChildLoaded": true},"*");
-    const domains = ["http://localhost:3000"];
-    window.addEventListener("message", function (event) {
-      if(!domains.includes(event.origin)) return;
-      const { action, key, value } = event.data;
-      if (action == "save") {
-        localStorage.setItem(key, value);
-      }
-      alert("got message");
-    })
+    // window.parent.postMessage({"isChildLoaded": true},"*");
+    // const domains = ["http://localhost:3000"];
+    // window.addEventListener("message", function (event) {
+    //   if(!domains.includes(event.origin)) return;
+    //   const { action, key, value } = event.data;
+    //   if (action == "save") {
+    //     localStorage.setItem(key, value);
+    //   }
+    //   alert("got message");
+    // })
   </script>
 </head>
 
