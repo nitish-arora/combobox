@@ -31,7 +31,7 @@ export class AppComponent {
 
   inIframe() {
     try {
-      return window.top !== window.self;
+      return window.location !== window.parent.location;
     } catch (ex) {
       return true;
     }
