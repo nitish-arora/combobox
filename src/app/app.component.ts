@@ -9,6 +9,8 @@ export class AppComponent {
   shouldLoad: boolean = false;
   ngOnInit() {
     debugger;
+    const isApplicationInIFrame = this.inIframe();
+    alert(isApplicationInIFrame);
     window.parent.postMessage({"isChildLoaded": true},"*");
     const domains = ["http://localhost:3000"];
     window.addEventListener("message",  (event) => {
@@ -25,6 +27,14 @@ export class AppComponent {
     // alert(localStorage.getItem("abc"));
     // window.addEventListener("message", this.messageHandler, false);
     // window.postMessage("message","*");
+  }
+
+  inIframe() {
+    try {
+      return window.top !== window.self;
+    } catch (ex) {
+      return true;
+    }
   }
 
   messageHandler(event) {
