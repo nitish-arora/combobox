@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   shouldLoad: boolean = false;
-  ngOninit() {
+  ngOnInit() {
     debugger;
     window.parent.postMessage({"isChildLoaded": true},"*");
     const domains = ["http://localhost:3000"];
